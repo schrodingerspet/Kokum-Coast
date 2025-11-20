@@ -54,7 +54,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "date-fns": "^4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.5.0",
     "input-otp": "^1.4.2",
@@ -63,7 +63,7 @@
     "publish": "^0.6.0",
     "react-day-picker": "^8.10.1",
     "react-hook-form": "^7.59.0",
-    "react-leaflet": "^5.0.0",
+    "react-leaflet": "^4.2.1",
     "react-resizable-panels": "^2.1.7",
     "react-router-dom": "^7.9.6",
     "react-share": "^5.2.2",
@@ -78,6 +78,9 @@
     "vaul": "^1.1.2",
     "zod": "^3.24.4",
     "zustand": "^5.0.6"
+  },
+  "overrides": {
+    "@emmetio/css-parser": "git+https://github.com/ramya-rao-a/css-parser.git#vscode"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
