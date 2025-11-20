@@ -1,0 +1,20 @@
+---
+import RouterWrapper from '@/components/RouterWrapper';
+import '@/styles/global.css';
+
+export const prerender = false;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kokum & Coast</title>
+</head>
+<body>
+  <div id="root">
+    <RouterWrapper client:only="react" />
+  </div>
+</body>
+</html>
