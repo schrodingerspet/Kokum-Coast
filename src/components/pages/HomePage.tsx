@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-dom';
 import { Clock, MapPin, Phone, Mail, Star, ChefHat, Calendar, Sparkles, TrendingUp, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,28 +12,28 @@ export default function HomePage() {
     target: heroRef,
     offset: ["start start", "end start"]
   });
-  
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
       {/* Skip to content link for accessibility */}
-      <a 
-        href="#main-content" 
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-md z-50"
       >
         Skip to main content
       </a>
 
       {/* Hero Section - Animated Mumbai Coastline */}
-      <section 
+      <section
         ref={heroRef}
         className="relative h-screen overflow-hidden"
         role="banner"
         aria-label="Hero section with restaurant introduction"
       >
-        <motion.div 
+        <motion.div
           style={{ y }}
           className="absolute inset-0 w-full h-full"
         >
@@ -45,8 +45,8 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-pink-900/70 to-orange-900/60" />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           style={{ opacity }}
           className="absolute bottom-20 left-8 right-8 z-20 max-w-5xl mx-auto"
         >
@@ -61,8 +61,8 @@ export default function HomePage() {
               Mumbai's Premier Coastal Dining
             </span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -72,7 +72,7 @@ export default function HomePage() {
               Kokum & Coast
             </span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
@@ -80,22 +80,22 @@ export default function HomePage() {
           >
             Where Tradition Meets Innovation
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1.1 }}
             className="flex flex-wrap gap-4"
           >
-            <Button 
-              asChild 
-              size="lg" 
+            <Button
+              asChild
+              size="lg"
               className="bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white px-10 py-6 text-xl rounded-full shadow-2xl hover:shadow-pink-500/50 transition-all hover:scale-105"
             >
               <Link to="/store">Order Online</Link>
             </Button>
-            <Button 
-              asChild 
-              variant="outline" 
+            <Button
+              asChild
+              variant="outline"
               size="lg"
               className="border-3 border-white bg-white/10 backdrop-blur-md text-white hover:bg-white hover:text-purple-900 px-10 py-6 text-xl rounded-full shadow-2xl transition-all hover:scale-105"
             >
@@ -107,9 +107,9 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main id="main-content" className="max-w-[120rem] mx-auto px-4 py-20">
-        
+
         {/* Restaurant Information Section */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -129,16 +129,16 @@ export default function HomePage() {
                   About Us
                 </span>
               </motion.div>
-              
+
               <h2 id="restaurant-info-heading" className="text-6xl font-heading font-bold bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent mb-8">
                 Experience Mumbai's Coastal Heritage
               </h2>
               <p className="text-xl font-paragraph text-gray-700 mb-8 leading-relaxed">
-                Nestled in the heart of Colaba, Kokum & Coast brings you an innovative culinary journey through 
-                coastal Maharashtra. Our menu celebrates traditional flavors with a contemporary twist, 
+                Nestled in the heart of Colaba, Kokum & Coast brings you an innovative culinary journey through
+                coastal Maharashtra. Our menu celebrates traditional flavors with a contemporary twist,
                 featuring fresh seafood, aromatic spices, and the signature tang of kokum.
               </p>
-              
+
               {/* Contact Information */}
               <div className="space-y-5 bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
                 <div className="flex items-center gap-4 group hover:translate-x-2 transition-transform">
@@ -171,8 +171,8 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -191,7 +191,7 @@ export default function HomePage() {
         </motion.section>
 
         {/* Quick Actions Section */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -207,7 +207,7 @@ export default function HomePage() {
               Quick Access
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <motion.div
               whileHover={{ y: -10, scale: 1.02 }}
@@ -275,7 +275,7 @@ export default function HomePage() {
         </motion.section>
 
         {/* Featured Highlights */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -291,7 +291,7 @@ export default function HomePage() {
               Why Choose Kokum & Coast
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { emoji: '🌊', title: 'Fresh Seafood', desc: "Daily catch from Mumbai's fishing docks", gradient: 'from-blue-500 to-cyan-400' },

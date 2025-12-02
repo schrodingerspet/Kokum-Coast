@@ -5,3 +5,11 @@ declare global {
     strict: true;
   }
 }
+
+interface ImportMetaEnv {
+  readonly PUBLIC_WIX_CLIENT_ID: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

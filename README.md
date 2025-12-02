@@ -1,147 +1,80 @@
-# Wixstro - Wix Astro Template
+# Kokum & Coast - Modern Wix Headless App
 
-A modern, full-featured Wix Astro template built with React, TypeScript, and Tailwind CSS. This template provides a solid foundation for building dynamic, interactive websites with Wix's powerful ecosystem.
+A production-ready web application built with **Astro**, **React**, and **Wix Headless**. This project demonstrates a modern architecture for e-commerce and content-driven sites, featuring selective SSR, robust type safety, and a premium UI.
 
 ## 🚀 Features
 
-- **Astro Framework** - Modern static site generator with server-side rendering
-- **React Integration** - Full React support with JSX components
-- **TypeScript** - Type-safe development experience
-- **Tailwind CSS** - Utility-first CSS framework with custom components
-- **Wix Integration** - Seamless integration with Wix services and APIs
-- **Modern UI Components** - Radix UI components with custom styling
-- **Authentication** - Built-in member authentication and protected routes
-- **CMS Integration** - Content management system integration
-- **Client-side Routing** - React Router for seamless navigation
-- **Responsive Design** - Mobile-first responsive design
-- **Testing** - Vitest testing framework setup
-- **Development Tools** - ESLint, TypeScript checking, and more
+- **Hybrid Rendering**: Astro for initial HTML & SEO, React for interactive islands.
+- **Wix Headless**: Typed client for Products, Cart, CMS, and Members.
+- **Strict TypeScript**: Full type safety across the entire codebase.
+- **Performance**: Critical CSS, image optimization, and code splitting.
+- **Developer Experience**: Docker, ESLint, Prettier, and Husky hooks.
+- **Testing**: Unit tests (Vitest) and E2E ready (Playwright).
+- **Security**: CSP, input sanitization, and secure environment handling.
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Astro 5.8.0
-- **Frontend**: React 18.3.0
-- **Styling**: Tailwind CSS 3.4.14
-- **Language**: TypeScript 5.8.3
-- **UI Components**: Radix UI
-- **State Management**: Zustand
-- **Forms**: React Hook Form with Zod validation
-- **Testing**: Vitest
-- **Build Tool**: Vite
-- **Deployment**: Cloudflare
-
+- **Framework**: Astro 5.8 + React 18.3
+- **Backend**: Wix Headless (SDK, Stores, Ecom, Members)
+- **State Management**: TanStack Query (Server) + Zustand (Client)
+- **Styling**: Tailwind CSS + Radix UI
+- **Forms**: React Hook Form + Zod
+- **Testing**: Vitest + Testing Library
+- **Deployment**: Docker / Node.js (Self-hosted)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (version 18 or higher)
-- npm or yarn package manager
-- Wix account and site
+- Node.js 18+
+- Docker (optional)
+- Wix Project ID & Client ID
 
 ### Installation
 
-1. **Install dependencies**:
+1. **Clone & Install**:
    ```bash
-   npm run install-template
+   git clone <repo-url>
+   cd kokum-coast
+   npm install
    ```
 
-2. **Set up environment variables**:
-   ```bash
-   npm run env
+2. **Environment Setup**:
+   Create a `.env` file:
+   ```env
+   PUBLIC_WIX_CLIENT_ID=your_client_id
    ```
 
-3. **Start development server**:
+3. **Run Locally**:
    ```bash
    npm run dev
+   # or with Docker
+   docker-compose up
    ```
-
-The development server will start and you can view your site at `http://localhost:4321`.
 
 ## 📁 Project Structure
 
 ```
-main/
-├── src/
-│   ├── components/          # React components
-│   │   ├── ui/             # Reusable UI components
-│   │   ├── Head.tsx        # Page head component
-│   │   └── Router.tsx      # Routing component
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions
-│   ├── pages/              # Astro pages
-│   └── styles/             # Global styles
-├── integrations/           # Wix integrations
-│   ├── cms/               # CMS integration
-│   └── members/           # Member authentication
-├── public/                # Static assets
-└── eslint-rules/          # Custom ESLint rules
+src/
+├── components/     # React components (UI, Forms, Pages)
+├── hooks/          # Custom hooks (useWixProducts, etc.)
+├── lib/
+│   └── wix/        # Typed Wix Headless client modules
+├── pages/          # Astro routes (SSR entry points)
+└── styles/         # Global Tailwind styles
 ```
-
-## 🎨 UI Components
-
-This template includes a comprehensive set of UI components built with Radix UI and styled with Tailwind CSS:
-
-- **Layout**: Accordion, Collapsible, Tabs, Sheet
-- **Forms**: Input, Select, Checkbox, Radio Group, Switch
-- **Navigation**: Navigation Menu, Menubar, Breadcrumb
-- **Feedback**: Alert, Toast, Progress, Skeleton
-- **Overlays**: Dialog, Popover, Tooltip, Hover Card
-- **Data Display**: Table, Card, Badge, Avatar
-- **Interactive**: Button, Toggle, Slider, Command
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run release` - Release to Wix
-- `npm run env` - Pull environment variables
-- `npm run check` - Type check with Astro
-- `npm run test:run` - Run tests
-- `npm run install-template` - Install dependencies
 
 ## 🧪 Testing
 
-The project includes Vitest for testing:
-
 ```bash
-npm run test:run
-```
-
-## 📱 Responsive Design
-
-The template is built with a mobile-first approach and includes:
-
-- Responsive breakpoints
-- Touch-friendly interactions
-- Optimized images
-- Flexible layouts
-
-## 🚀 Deployment
-
-The template is configured for deployment on Cloudflare:
-
-```bash
-npm run build
+npm run test:run   # Run unit tests
+npm run type-check # Run strict type check
+npm run lint       # Run linter
 ```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## 🆘 Support
-
-For support and questions:
-
-- Check the [Wix Developer Documentation](https://dev.wix.com/)
-- Review the [Astro Documentation](https://docs.astro.build/)
-
+Please read `CONTRIBUTING.md` (coming soon) for details on our code of conduct and the process for submitting pull requests.
 
 ---
-
-Built with ❤️ using Wix Vibe, Astro, and modern web technologies.
+Built with ❤️ by the Kokum & Coast Team.

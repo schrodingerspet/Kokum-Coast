@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Navigation } 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Image } from '@/components/ui/image';
+import { ContactForm } from '@/components/forms/ContactForm';
 
 export default function ContactPage() {
   const contactInfo = [
@@ -84,7 +85,7 @@ export default function ContactPage() {
       {/* Contact Information */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          
+
           {/* Contact Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((info, index) => (
@@ -103,13 +104,13 @@ export default function ContactPage() {
                     <p className="font-paragraph text-foreground/70 mb-4 whitespace-pre-line">
                       {info.content}
                     </p>
-                    <Button 
-                      asChild 
-                      variant="outline" 
+                    <Button
+                      asChild
+                      variant="outline"
                       size="sm"
                       className="w-full"
                     >
-                      <a 
+                      <a
                         href={info.href}
                         target={info.href.startsWith('http') ? '_blank' : undefined}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -125,7 +126,7 @@ export default function ContactPage() {
 
           {/* Map and Additional Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Map */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -164,7 +165,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              
+
               {/* About Location */}
               <Card>
                 <CardHeader>
@@ -172,8 +173,8 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="font-paragraph text-foreground/80 leading-relaxed mb-4">
-                    Located in the vibrant heart of Colaba Causeway, Kokum & Coast is perfectly positioned 
-                    near Mumbai's most iconic landmarks. Just a short walk from the Gateway of India and 
+                    Located in the vibrant heart of Colaba Causeway, Kokum & Coast is perfectly positioned
+                    near Mumbai's most iconic landmarks. Just a short walk from the Gateway of India and
                     the bustling Colaba market.
                   </p>
                   <div className="space-y-2 text-sm font-paragraph text-foreground/70">
@@ -235,6 +236,16 @@ export default function ContactPage() {
               </Card>
             </motion.div>
           </div>
+
+          {/* Contact Form Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-16"
+          >
+            <ContactForm />
+          </motion.div>
 
           {/* Quick Actions */}
           <motion.div

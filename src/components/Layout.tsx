@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from '@/lib/router-dom';
 import { MiniCartContextProvider } from './MiniCartContextProvider';
 import { NavigationProvider } from './NavigationContext';
 import { ScrollToTop } from '@/lib/scroll-to-top';

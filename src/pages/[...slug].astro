@@ -1,8 +1,25 @@
 ---
-import RouterWrapper from '@/components/RouterWrapper';
+import App from '@/components/App';
 import '@/styles/global.css';
+import { getPageBySlug } from '@/lib/wix/cms';
 
-export const prerender = false;
+const { slug } = Astro.params;
+if (slug === 'favicon.ico') {
+  return new Response(null, { status: 404 });
+}
+const currentSlug = slug || 'home';
+
+let pageData = null;
+try {
+  pageData = await getPageBySlug(currentSlug);
+} catch (e) {
+  console.error('Failed to fetch page data', e);
+}
+
+// If we wanted to return 404 from Astro, we could do it here.
+// if (!pageData && currentSlug !== 'home') {
+//   return Astro.redirect('/404');
+// }
 ---
 
 <!DOCTYPE html>
@@ -11,10 +28,11 @@ export const prerender = false;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kokum & Coast</title>
+  <meta name="description" content="Mumbai's Premier Coastal Dining" />
 </head>
 <body>
   <div id="root">
-    <RouterWrapper client:only="react" />
+    <App client:load initialData={pageData} url={Astro.url.pathname} />
   </div>
 </body>
 </html>

@@ -1,19 +1,23 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import netlify from '@astrojs/netlify';
+import node from '@astrojs/node';
+
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: netlify(),
-  integrations: [react()],
+  adapter: node({
+    mode: 'standalone',
+  }),
+  integrations: [react(), tailwind()],
   devToolbar: {
     enabled: false
   },
   vite: {
     ssr: {
-      noExternal: ["react-router-dom", "react-router"],
-      external: [],
+      noExternal: [],
+      external: ["react-router-dom", "react-router"],
     },
     resolve: {
       conditions: ['import', 'module', 'browser', 'default'],

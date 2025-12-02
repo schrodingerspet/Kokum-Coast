@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Code, Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '@/lib/router-dom';
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -31,16 +31,16 @@ export default function Footer() {
               Coastal Maharashtra, Reimagined. Experience authentic flavors with a modern twist.
             </p>
             <div className="flex gap-4">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
-                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                 className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all hover:scale-110">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -159,7 +159,7 @@ export default function Footer() {
           </div>
 
           {/* Developer Credit */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 px-6 py-3 rounded-full border border-purple-400/30 backdrop-blur-sm"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
